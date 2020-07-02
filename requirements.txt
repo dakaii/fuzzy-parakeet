@@ -1,0 +1,15 @@
+Django==3.0.7
+django-cors-headers==3.2.1
+django-filter==2.2.0
+djangorestframework==3.11.0
+djangorestframework-camel-case
+djoser
+djangorestframework-simplejwt==4.4.0
+flake8==3.7.9
+gunicorn==20.0.4
+Markdown==3.1.1
+psycopg2==2.8.4
+ptvsd==4.3.2
+pytest==5.4.1
+pytest-django==3.9.0
+pytest-factoryboy==2.0.3
