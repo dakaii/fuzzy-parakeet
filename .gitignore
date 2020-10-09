@@ -5,3 +5,5 @@ db.sqlite3
 static
 __pycache__
 *.pyc
+config/sendgrid.conf
+config/microsoftazure.conf

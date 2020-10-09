@@ -9,8 +9,9 @@ class IsBusinessOwner(BasePermission):
     """
 
     def has_permission(self, request, view):
-        return request.user and \
-            request.user.category == AccountOwner.BUSINESS_OWNER
+        user = request.user
+        return user and \
+            getattr(user, 'category', -1) == AccountOwner.BUSINESS_OWNER
 
 
 class IsGeneralUser(BasePermission):
@@ -19,5 +20,6 @@ class IsGeneralUser(BasePermission):
     """
 
     def has_permission(self, request, view):
-        return request.user and \
-            request.user.category == AccountOwner.GENERAL_USER
+        user = request.user
+        return user and \
+            getattr(user, 'category', -1) == AccountOwner.GENERAL_USER

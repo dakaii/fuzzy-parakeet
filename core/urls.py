@@ -22,4 +22,5 @@ urlpatterns = [
     path('api/', include('djoser.urls.jwt')),
     path('api/', include('core.accounts.urls')),
     path('api/', include('core.businesses.urls')),
+    path('api/', include('core.locations.urls')),
 ]

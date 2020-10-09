@@ -20,6 +20,8 @@ services:
       - db
     env_file:
       - config/dev.conf
+      - config/sendgrid.conf
+      - config/microsoftazure.conf
 
 volumes:
   postgres_data:
