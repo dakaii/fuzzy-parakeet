@@ -1,7 +1,7 @@
 import factory
 import pytest
 from rest_framework.reverse import reverse
-from core.accounts.models import AccountOwner
+from core.accounts.models.account_owners import AccountOwner
 
 
 @pytest.mark.django_db

@@ -1,8 +1,8 @@
-version: "3.7"
+version: "3.8"
 
 services:
   db:
-    image: postgres:latest
+    image: ghcr.io/baosystems/postgis:latest
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     env_file:

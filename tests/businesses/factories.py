@@ -1,7 +1,7 @@
 import factory
 from core.businesses.models import AffiliatedPerson, Organization, Product
 from tests.factories import UserFactory
-from core.accounts.models import AccountOwner
+from core.accounts.models.account_owners import AccountOwner
 
 
 class AffiliatedPersonFactory(factory.DjangoModelFactory):
