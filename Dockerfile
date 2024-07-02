@@ -1,14 +1,21 @@
-FROM python:3.8-alpine
+FROM python:3.12-slim
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN apk add --no-cache gcc musl-dev postgresql-dev
+# Install dependencies
+RUN apt-get update && \
+    apt-get install -y gcc libpq-dev && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN mkdir /code
-COPY . /code/
+# Set work directory
 WORKDIR /code
-RUN pip install -r requirements.txt
+
+# Copy project files into the Docker image
+COPY . /code/
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 CMD gunicorn -b :$PORT core.wsgi
